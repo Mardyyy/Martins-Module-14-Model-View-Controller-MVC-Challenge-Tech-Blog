@@ -10,6 +10,18 @@
             <button type="submit" class="btn btn-primary">Create</button>
         </div>
     </form>
+
+    <div class="text-center">
+        <h3>All Comments</h3>
+        {{#each comments as |comment| }}
+        <div>
+            <p>{{comment.comment_text}} by {{comment.user.name}} on
+                {{format_date comment.date_created}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+
 </div>
 
-<script src="./js/createComment"></script>
+<script src="./js/create.js"></script>

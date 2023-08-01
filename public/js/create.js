@@ -3,8 +3,8 @@ const newFormHandler = async (event) => {
 
     const comment_text = document.querySelector('#project-name').value.trim();
 
-    const url = window.location.toString().split("/");
-    const project_id = url[2 - 1];
+    // const url = window.location.toString().split("/");
+    const project_id = 1;
     // const project_id = url[url.length - 1];
 
     if (comment_text) {
@@ -19,7 +19,7 @@ const newFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/project');
+            document.location.replace('/create');
         } else {
             alert('Failed to create project');
         }
