@@ -6,9 +6,21 @@
   <p>
     <span for="img" aria-label="money"></span>
     <span class="dollar-amount">Post #{{format_amount needed_funding}}</span>
-    
+
   </p>
+
+  <div class="text-center">
+    <h3>Comments</h3>
+    {{#each comments as |comment| }}
+    <div>
+      <p>{{comment.comment_text}} by {{comment.user.name}} on 
+        {{format_date comment.date_created}}
+        </p>
+    </div>
+    {{/each}}
+  </div>
+  
   <p>
-    <button class="btn btn-primary">Leave a comment!</button>
+    <a href="/api/comments">Leave a Comment!</a>
   </p>
 </div>
